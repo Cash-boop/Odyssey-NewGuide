@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odyssey: Your First Big Adventure</title>
+<meta name="description" content="A student-made guide to the 9th grade Odyssey trip at SAAS: what to expect, what to pack, and a place to share what you think.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#1d3a2a;
+  --pine:#2e5c44;
+  --moss:#5f8a58;
+  --mist:#dfeadf;
+  --paper:#f6f1e4;
+  --cream:#fcfaf3;
+  --ember:#e0642a;
+  --ember-dark:#a8430f;
+  --ink:#1b2a22;
+  --muted:#52625a;
+  --line:#d9d3c0;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(29,58,42,.12);
+  --head:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:var(--ember-dark)}
+a:hover{color:var(--ember)}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:#fff;padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0 0 .5em;color:var(--forest)}
+h1{font-size:clamp(2.4rem,6.4vw,4.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4.2vw,2.9rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1em}
+.eyebrow{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--ember-dark);margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor;display:inline-block}
+.lead{font-size:1.18rem;color:var(--muted);max-width:60ch}
+
+/* Top bar */
+.ribbon{background:var(--forest);color:#e9f1e6;font-size:.84rem;text-align:center;padding:7px 16px}
+.ribbon b{color:#ffd3b4}
+header.site{position:sticky;top:0;z-index:50;background:rgba(252,250,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-family:var(--head);font-weight:800;font-size:1.3rem;color:var(--forest);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:30px;height:30px}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
+.nav a.link{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem}
+.nav a.link:hover,.nav a.link.on{background:var(--mist);color:var(--forest)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--body);font-size:1rem;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ember);color:#fff}
+.btn.primary:hover{background:var(--ember-dark);color:#fff}
+.btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.12);color:#fff}
+.btn.dark{background:var(--forest);color:#fff}
+.btn.dark:hover{background:var(--pine);color:#fff}
+.btn.small{padding:8px 16px;font-size:.92rem}
+.menu-btn{display:none;background:none;border:2px solid var(--forest);border-radius:10px;padding:8px 12px;font-weight:700;color:var(--forest);font-family:var(--body)}
+
+/* Hero */
+.hero{position:relative;background:linear-gradient(180deg,#14281d 0%,#1d3a2a 55%,#2e5c44 100%);color:#fff;overflow:hidden}
+.hero .topo{position:absolute;inset:0;opacity:.18;pointer-events:none}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:72px 0 0}
+.hero h1{color:#fff}
+.hero h1 em{font-style:normal;color:#ffb98a}
+.hero .lead{color:#d6e5d6}
+.hero .eyebrow{color:#ffb98a}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 8px}
+.hero-art{align-self:end}
+.facts{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.18);margin-top:42px;border-radius:var(--radius) var(--radius) 0 0;overflow:hidden}
+.fact{background:#183226;padding:18px 20px}
+.fact b{display:block;font-family:var(--head);font-size:1.55rem;color:#ffd9bd}
+.fact span{font-size:.9rem;color:#cfe0cf}
+
+section{padding:88px 0}
+section.alt{background:var(--paper)}
+section.dark{background:var(--forest);color:#e6efe3}
+section.dark h2,section.dark h3{color:#fff}
+.section-head{max-width:720px;margin-bottom:40px}
+
+/* Cards */
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.card .ico{width:46px;height:46px;border-radius:14px;background:var(--mist);display:grid;place-items:center;margin-bottom:14px}
+.card .ico svg{width:26px;height:26px;stroke:var(--forest);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.note{background:#fff4e8;border:1px dashed #e7b98e;border-radius:14px;padding:14px 18px;font-size:.95rem;color:#6a3a14}
+.note b{color:var(--ember-dark)}
+
+/* Trail timeline */
+.trail{position:relative;display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+.trail::before{content:"";position:absolute;left:8%;right:8%;top:30px;border-top:3px dashed var(--moss);opacity:.6}
+.day{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:56px 24px 24px;box-shadow:var(--shadow)}
+.day .pin{position:absolute;top:8px;left:24px;width:44px;height:44px;border-radius:50%;background:var(--ember);color:#fff;font-family:var(--head);font-weight:800;display:grid;place-items:center;border:4px solid var(--paper)}
+.day h3{margin-bottom:.2em}
+.day small{color:var(--muted);display:block;margin-bottom:12px}
+.day ul{margin:0;padding-left:1.1rem}
+.day li{margin-bottom:.45rem}
+
+/* Pack */
+.pack-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
+.progress{position:sticky;top:76px;z-index:5;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:18px;box-shadow:var(--shadow)}
+.bar{height:10px;background:var(--mist);border-radius:99px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--moss),var(--ember));border-radius:99px;transition:width .3s}
+.packgroup{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-bottom:16px}
+.packgroup h3{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.packgroup h3 span{font-family:var(--body);font-size:.82rem;font-weight:700;color:var(--muted)}
+.check{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-top:1px solid #efeadb;cursor:pointer}
+.check:first-of-type{border-top:0}
+.check input{appearance:none;flex:none;width:24px;height:24px;border:2px solid var(--pine);border-radius:7px;margin-top:2px;display:grid;place-items:center;background:#fff;cursor:pointer}
+.check input:checked{background:var(--pine)}
+.check input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.check input:checked + span{text-decoration:line-through;color:#7d8b83}
+.check small{display:block;color:var(--muted)}
+.side-stack{display:grid;gap:16px}
+.leave{background:#3a1d12;color:#ffe3d1;border-radius:var(--radius);padding:22px}
+.leave h3{color:#fff}
+.leave ul{margin:0;padding-left:1.1rem}
+.layers{display:grid;gap:8px;margin-top:10px}
+.layer{display:flex;gap:12px;align-items:center;border-radius:12px;padding:10px 14px;font-weight:500}
+.layer b{font-family:var(--head)}
+.l1{background:#e7efe3}.l2{background:#cfe0cb}.l3{background:#a9c7b7}
+
+/* Camp */
+.parks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.park{margin:0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);overflow:hidden}
+.park img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s}
+.park:hover img{transform:scale(1.04)}
+.park{overflow:hidden}
+.park figcaption{padding:16px 20px 18px}
+.park h3{margin:0 0 .15em}
+.park p{margin:0;font-size:.92rem;color:#cfe0cf}
+.dark .card{background:#fff;color:var(--ink)}
+.dark .card h3{color:var(--forest)}
+.dark a{color:#ffc9a3}
+
+/* Group */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:20px}
+.person{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.person b{display:block;font-family:var(--head);font-size:1.1rem;color:var(--forest)}
+.person span{color:var(--muted);font-size:.93rem}
+
+/* FAQ */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+summary{cursor:pointer;padding:18px 22px;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--ember);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .ans{padding:0 22px 20px;color:#34443c}
+details[open]{box-shadow:var(--shadow)}
+
+/* Voice / survey */
+.voice-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:start}
+.prompts{display:grid;gap:12px;margin:22px 0}
+.prompt{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px 16px}
+.prompt b{color:#ffd3b4}
+.frame{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.frame iframe{width:100%;height:760px;border:0;display:block}
+.frame .fallback{padding:14px 18px;font-size:.93rem;color:var(--muted);border-top:1px solid var(--line);background:var(--cream);color:var(--ink)}
+
+footer{background:#12251a;color:#b8cbb9;padding:48px 0;font-size:.92rem}
+footer a{color:#ffc9a3}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
+footer h3{color:#fff;font-size:1.05rem}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .btn{transition:none}
+}
+
+/* Responsive */
+@media (max-width:920px){
+  .hero-inner{grid-template-columns:1fr;padding-top:48px}
+  .hero-art{order:-1;max-width:420px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .g2,.g3,.parks,.trail,.pack-layout,.voice-grid,footer .cols{grid-template-columns:1fr}
+  .trail::before{display:none}
+  .side-stack{position:static}
+  section{padding:64px 0}
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:64px;background:var(--cream);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 16px 16px;gap:2px}
+  .nav ul.open{display:flex}
+  .nav a.link{padding:12px 14px}
+  .frame iframe{height:820px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="ribbon">A <b>student design project</b> at SAAS. Not an official school site. Details come from the school's Odyssey materials for the 2026 trip.</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Odyssey home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 27 16 5l14 22z" fill="#2e5c44"/><path d="M16 5l14 22H16z" fill="#1d3a2a"/><path d="M11 27l5-8 5 8z" fill="#e0642a"/></svg>
+      Odyssey
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlist" id="menuBtn">Menu</button>
+    <ul id="navlist">
+      <li><a class="link" href="#what">What is it?</a></li>
+      <li><a class="link" href="#trail">A day on the trail</a></li>
+      <li><a class="link" href="#pack">Pack</a></li>
+      <li><a class="link" href="#camp">Camp &amp; food</a></li>
+      <li><a class="link" href="#group">Your group</a></li>
+      <li><a class="link" href="#faq">Questions</a></li>
+      <li><a class="btn primary small" href="#voice">Share your voice</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<div class="hero" id="top">
+  <svg class="topo" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#9fc4a8" stroke-width="1.2">
+    <path d="M-20 120C150 60 260 190 420 140S700 40 880 120s250 40 360-30"/>
+    <path d="M-20 170C150 110 260 240 420 190S700 90 880 170s250 40 360-30"/>
+    <path d="M-20 220C150 160 260 290 420 240S700 140 880 220s250 40 360-30"/>
+    <path d="M-20 270C150 210 260 340 420 290S700 190 880 270s250 40 360-30"/>
+    <path d="M-20 320C150 260 260 390 420 340S700 240 880 320s250 40 360-30"/>
+    <path d="M-20 370C150 310 260 440 420 390S700 290 880 370s250 40 360-30"/>
+    <path d="M-20 420C150 360 260 490 420 440S700 340 880 420s250 40 360-30"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">9th grade at SAAS</div>
+        <h1>Your first big <em>adventure</em> starts at camp.</h1>
+        <p class="lead">Odyssey is three days outdoors with your advisory group. Here is what to expect, what to pack, and where to tell us what you think, all in plain words.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#trail">See a day on the trail</a>
+          <a class="btn ghost" href="#voice">Tell us what you think</a>
+        </div>
+        <p style="font-size:.9rem;color:#b9cfbc;margin:6px 0 0">Your dates and groups come from your advisor. Last year's trip ran Sept 30 to Oct 2, 2026.</p>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 520 380" role="img" aria-label="Illustration of a tent and campfire among pine trees at dusk">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb26b" stop-opacity=".85"/><stop offset="1" stop-color="#ffb26b" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="410" cy="70" r="30" fill="#ffe7c7"/>
+          <g fill="#ffe7c7" opacity=".85"><circle cx="60" cy="50" r="2"/><circle cx="140" cy="90" r="1.6"/><circle cx="230" cy="40" r="2"/><circle cx="300" cy="100" r="1.5"/><circle cx="480" cy="140" r="1.8"/><circle cx="90" cy="150" r="1.4"/></g>
+          <path d="M0 250 130 130l90 90 70-70 100 100 130-80v260H0z" fill="#27503a"/>
+          <path d="M0 290 90 210l80 70 90-90 110 100 150-60v210H0z" fill="#1e4030"/>
+          <ellipse cx="260" cy="330" rx="150" ry="60" fill="url(#glow)"/>
+          <path d="M0 320c90-18 180-20 260-8s170 6 260-14v82H0z" fill="#14281d"/>
+          <!-- pines -->
+          <g fill="#14281d">
+            <path d="M40 330l30-100 30 100z"/><path d="M52 330l18-70 18 70z" fill="#1b3626"/>
+            <path d="M440 335l34-120 34 120z"/><path d="M455 335l19-80 19 80z" fill="#1b3626"/>
+            <path d="M385 340l22-80 22 80z"/>
+          </g>
+          <!-- tent -->
+          <path d="M120 335l70-110 70 110z" fill="#e0642a"/>
+          <path d="M190 225l70 110h-70z" fill="#b8481a"/>
+          <path d="M175 335l15-45 15 45z" fill="#2a1409"/>
+          <!-- fire -->
+          <path d="M318 330c-14-10-16-26-4-40 2 10 8 14 14 14-2-12 4-22 12-30 0 14 14 22 10 38-3 10-14 18-32 18z" fill="#ffb347"/>
+          <path d="M326 330c-6-5-6-12 0-18 1 5 4 6 6 6 0-4 2-8 5-10 0 6 6 9 4 15-2 5-8 8-15 7z" fill="#fff0b8"/>
+          <path d="M296 340h60M304 346l44-8M348 346l-44-8" stroke="#4b2b17" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+    <div class="facts" role="list">
+      <div class="fact" role="listitem"><b>30+ years</b><span>a SAAS tradition</span></div>
+      <div class="fact" role="listitem"><b>3 days</b><span>camping outside</span></div>
+      <div class="fact" role="listitem"><b>3 state parks</b><span>Penrose, Scenic Beach, Manchester</span></div>
+      <div class="fact" role="listitem"><b>Your advisory</b><span>the group you camp with</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT -->
+<section id="what">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What is Odyssey?</div>
+      <h2>A rite of passage, and a head start on high school.</h2>
+      <p class="lead">Every 9th grader at SAAS goes. Seniors and alumni often call it one of the defining moments of their time at the school.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M15 14.5c3 0 6 1.5 6 5.5"/></svg></div>
+        <h3>Get to know people</h3>
+        <p>The trip is about building relationships with your classmates, your advisor, and other faculty, away from the usual classroom.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20 9 8l4 7 3-4 5 9z"/></svg></div>
+        <h3>Preview the journey</h3>
+        <p>You talk about what is coming up in upper school: the challenges and the opportunities, before the year gets busy.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 10l7-7 7 7"/></svg></div>
+        <h3>Try something new</h3>
+        <p>Cooking with your group, sleeping in a tent, and leaving your phone at the bus. A lot of it will be new, and everyone starts at the same place.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TRAIL -->
+<section id="trail" class="alt">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">A day on the trail</div>
+      <h2>Three days, start to finish.</h2>
+      <p class="lead">Here is the outline from the school's advisory slides. Your advisor shares the full schedule for your group.</p>
+    </div>
+    <div class="trail">
+      <article class="day reveal">
+        <div class="pin">1</div>
+        <h3>Head out</h3>
+        <small>Morning departure from SAAS, about 8:15 to 8:30 AM</small>
+        <ul>
+          <li>Phones go in at the bus.</li>
+          <li>Travel to your state park with your advisory group.</li>
+          <li>Eat the sack lunch you packed.</li>
+          <li>Set up camp, then advisory activities.</li>
+          <li>Dinner is cooked by students and leaders together.</li>
+        </ul>
+      </article>
+      <article class="day reveal">
+        <div class="pin">2</div>
+        <h3>Full camp day</h3>
+        <small>Your group stays at the same park all trip</small>
+        <ul>
+          <li>Advisory activities with your group.</li>
+          <li>Whole-group activities.</li>
+          <li>Meals cooked and shared together.</li>
+          <li>Fires only in the fire pits, and only if there is no burn ban.</li>
+        </ul>
+      </article>
+      <article class="day reveal">
+        <div class="pin">3</div>
+        <h3>Pack up, head home</h3>
+        <small>Back on campus around 1:30 to 2:15 PM</small>
+        <ul>
+          <li>Breakfast and pack up camp.</li>
+          <li>Lunch before you leave.</li>
+          <li>Ride back to campus.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="note reveal" style="margin-top:24px"><b>Heads up:</b> the school's slides do not list activities day by day, and times differ slightly between slides. Your advisor confirms exact times. Want a say in what the activities are? <a href="#voice">Take the survey.</a></p>
+  </div>
+</section>
+
+<!-- PACK -->
+<section id="pack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What to pack</div>
+      <h2>Pack once, check it twice.</h2>
+      <p class="lead">Tap items as you pack them. Your progress is saved on this device. This list is from the 2026 equipment list, so check the new one when your advisor sends it.</p>
+    </div>
+    <div class="pack-layout">
+      <div>
+        <div class="progress" aria-live="polite">
+          <b id="packCount">0 of 0 packed</b>
+          <div class="bar"><i id="packBar"></i></div>
+        </div>
+        <div id="packlist"></div>
+      </div>
+      <div class="side-stack">
+        <div class="card">
+          <h3>Weather: pack in layers</h3>
+          <p style="margin-bottom:6px">Late September weather in western Washington can vary a lot. Plan to be outside and active in all kinds of conditions.</p>
+          <div class="layers">
+            <div class="layer l1"><b>1</b> Base layer: wool or synthetic, no cotton</div>
+            <div class="layer l2"><b>2</b> Warm layer: fleece or wool</div>
+            <div class="layer l3"><b>3</b> Rain shell: waterproof jacket and pants</div>
+          </div>
+          <p style="margin:12px 0 0;font-size:.94rem">Check the forecast a few days before you go: <a href="https://www.weather.gov/sew/" target="_blank" rel="noopener">National Weather Service, Seattle</a>.</p>
+        </div>
+        <div class="leave">
+          <h3>Leave at home</h3>
+          <ul>
+            <li>Cell phones and electronics (collected at the bus)</li>
+            <li>Speakers and gaming devices</li>
+            <li>Alcohol, drugs, tobacco, and vapes</li>
+            <li>Knives, hatchets, lighters, and weapons</li>
+            <li>Candy and junk food</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>No gear? Not a problem.</h3>
+          <p style="margin-bottom:8px">SAAS supplies group gear like tents, cooking sets, stoves, tarps, and first-aid kits. For personal gear, borrow within your group first, then ask your advisor about the SAAS Gear Library, which has a limited number of packs, bags, and pads.</p>
+          <a class="btn dark small" href="https://docs.google.com/forms/d/e/1FAIpQLSeA5Gn7olsAi3Y8n2vWpir6gPNe8DgiwDeR5rvnxDtGiLEHqg/viewform" target="_blank" rel="noopener">School gear request form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMP -->
+<section id="camp" class="dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:#ffb98a">Camp and food</div>
+      <h2>Where you will sleep, eat, and wash up.</h2>
+      <p class="lead" style="color:#cfe0cf">Your advisory group is assigned one of three Washington State Parks and stays there the whole trip.</p>
+    </div>
+    <div class="parks reveal">
+      <figure class="park">
+        <img src="img/penrose.jpg" width="513" height="375" loading="lazy" alt="Low tide at Penrose, with driftwood on the beach and a tree-covered point across the water">
+        <figcaption><h3>Penrose</h3><p>Washington State Park</p></figcaption>
+      </figure>
+      <figure class="park">
+        <img src="img/scenic-beach.jpg" width="584" height="401" loading="lazy" alt="Scenic Beach shoreline with a wooden fence, blue water, and snowy mountains in the distance">
+        <figcaption><h3>Scenic Beach</h3><p>Washington State Park</p></figcaption>
+      </figure>
+      <figure class="park">
+        <img src="img/manchester.jpg" width="533" height="354" loading="lazy" alt="A calm bay at Manchester with a rocky shore, evergreen trees, and blue sky">
+        <figcaption><h3>Manchester</h3><p>Washington State Park. Photo: Sue Adams</p></figcaption>
+      </figure>
+    </div>
+    <div class="grid g3">
+      <article class="card reveal">
+        <h3>Sleeping</h3>
+        <p>Everyone sleeps in tents with their advisory group and advisor. Advisors help form tent groups. Other campers may be nearby, so respect their space.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Bathrooms and water</h3>
+        <p>Each campground has restrooms and drinking-water spigots. Bring a 1-liter bottle and your camp kit.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Food</h3>
+        <p>Bring a sack lunch for the first day. Every other meal is provided, and students and leaders cook together. Tell your advisor about allergies or dietary needs.</p>
+      </article>
+    </div>
+    <p class="note reveal" style="margin-top:22px;background:#fff;color:#33463b;border-color:#c9d6c8"><b>Staying safe:</b> the campsites are remote, so help can take longer to arrive. Advisors and trip leaders have basic First Aid and CPR training. No swimming or tree climbing during the trip. Leaders cannot hand out medication, so bring your own with your personal first aid items.</p>
+  </div>
+</section>
+
+<!-- GROUP -->
+<section id="group">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Your group</div>
+      <h2>You will not be on your own.</h2>
+      <p class="lead">You go with your advisory group and your advisor. You camp together, cook together, and take on the trip together. These are the people who plan Odyssey and can answer your questions.</p>
+    </div>
+    <div class="card reveal" style="margin-bottom:18px">
+      <h3>Ask anything</h3>
+      <p style="margin-bottom:10px">Email <a href="mailto:odyssey@seattleacademy.org">odyssey@seattleacademy.org</a> or ask your advisor.</p>
+    </div>
+    <div class="people reveal">
+      <div class="person"><b>Jeanne Stevens</b><span>Upper School Dean of Students, 9th Grade</span></div>
+      <div class="person"><b>Ashley Rohrbach</b><span>9th Grade Coordinator</span></div>
+      <div class="person"><b>Matt Edenfield</b><span>Outdoor Trips &amp; Travel Director</span></div>
+      <div class="person"><b>Lauren Marziliano</b><span>Outdoor Trips &amp; Travel Assistant Director</span></div>
+      <div class="person"><b>Will Hinman</b><span>11th/12th Grade Coordinator and Outdoor &amp; Travel Coordinator</span></div>
+    </div>
+    <p style="margin-top:14px;font-size:.88rem;color:var(--muted)">Names and roles come from the SAAS Odyssey page.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap" style="max-width:860px">
+    <div class="section-head reveal">
+      <div class="eyebrow">Questions</div>
+      <h2>The things people wonder about.</h2>
+      <p class="lead">Straight answers, based on the school's materials. If we do not know, we say so.</p>
+    </div>
+    <div class="reveal">
+      <details><summary>Do I have to go?</summary><div class="ans">All 9th graders are expected to take part. Your parent or guardian also needs to finish the enrollment, medical, and permission forms before the trip. If something is making you hesitate, tell your advisor early so they can help.</div></details>
+      <details><summary>What if I do not know anyone in my group?</summary><div class="ans">Odyssey is partly about getting to know people, and everyone is new to the upper school. You camp with your advisory group and your advisor, and you cook and set up camp together.</div></details>
+      <details><summary>What if I am nervous or get homesick?</summary><div class="ans">That is normal. Talk to your advisor before or during the trip. Advisors and trip leaders have basic First Aid and CPR training, and you will have a one-on-one check-in with your advisor before the trip (in 2026 it was early September).</div></details>
+      <details><summary>What if I do not have the gear?</summary><div class="ans">You can borrow. Ask within your group first, then your advisor about the SAAS Gear Library, which has a limited number of packs, sleeping bags, and pads. Tell your advisor by the gear deadline so there is time to sort it out.</div></details>
+      <details><summary>What happens to my phone?</summary><div class="ans">Phones and other electronics are collected at the bus. Do not bring speakers or gaming devices either.</div></details>
+      <details><summary>Are there bathrooms and clean water?</summary><div class="ans">Yes. Each campground has restrooms and drinking-water spigots.</div></details>
+      <details><summary>What about food and allergies?</summary><div class="ans">Bring a sack lunch for the first day. All other meals are provided, and students and leaders cook them. Tell your advisor about any allergies or dietary needs.</div></details>
+      <details><summary>What if it rains?</summary><div class="ans">Late September weather in western Washington can change fast, so pack waterproof layers and check the forecast beforehand. The school's materials do not describe a rain plan, so ask your advisor or email odyssey@seattleacademy.org. This is one of the things the survey below asks about.</div></details>
+      <details><summary>What will we actually do all day?</summary><div class="ans">Advisory activities, whole-group activities, and cooking and eating together, according to the school's slides. Your advisor shares the details. If you want different activities, vote in the survey.</div></details>
+      <details><summary>Can I swim or climb trees?</summary><div class="ans">No. Swimming and tree climbing are not allowed during the trip.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section id="voice" class="dark">
+  <div class="wrap">
+    <div class="voice-grid">
+      <div class="reveal">
+        <div class="eyebrow" style="color:#ffb98a">Your voice</div>
+        <h2>You shape what Odyssey becomes.</h2>
+        <p class="lead" style="color:#cfe0cf">We are a student group looking at how to make Odyssey better. We want to hear from incoming 9th graders, students who have done the trip, advisors, and parents.</p>
+        <div class="prompts">
+          <div class="prompt"><b>01</b><span>What are you excited or nervous about?</span></div>
+          <div class="prompt"><b>02</b><span>What would help you feel ready?</span></div>
+          <div class="prompt"><b>03</b><span>Which activities do you want more of?</span></div>
+        </div>
+        <p><b>It is anonymous.</b> It takes about five minutes. Your answers do not include your name or email.</p>
+        <p style="font-size:.95rem">Want to talk with us in person? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNNNajiB8JJ0vHVm7tn3gPdN5hlNLfRRHhxtpOauuClU-A_A/viewform" target="_blank" rel="noopener">Sign up for a short interview</a>.</p>
+      </div>
+      <div class="frame reveal">
+        <iframe title="Odyssey survey" src="https://docs.google.com/forms/d/e/1FAIpQLSexLTMLm-AEHH9rRK8J4VZ9EKpr6Uh6eNk1FjmZIvXypt_UBg/viewform?embedded=true" loading="lazy">Loading survey...</iframe>
+        <div class="fallback">Survey not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSexLTMLm-AEHH9rRK8J4VZ9EKpr6Uh6eNk1FjmZIvXypt_UBg/viewform" target="_blank" rel="noopener">Open it in a new tab</a>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <h3>About this site</h3>
+      <p>A student design thinking project at Seattle Academy of Arts and Sciences. It is <b>not an official SAAS website</b>. We built it to make Odyssey easier to understand and to give students a way to be heard.</p>
+    </div>
+    <div>
+      <h3>Where the info comes from</h3>
+      <p>The SAAS <a href="https://www.seattleacademy.org/odyssey" target="_blank" rel="noopener">Odyssey page</a>, the 2026 equipment list, and the 2026 advisory slides. Dates, times, and rules can change each year, so always confirm with your advisor or <a href="mailto:odyssey@seattleacademy.org">odyssey@seattleacademy.org</a>.</p>
+      <p>Park photos come from our team's prototype. Photo sources and credits are still being confirmed.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Mobile menu */
+  var btn=document.getElementById('menuBtn'), list=document.getElementById('navlist');
+  btn.addEventListener('click',function(){
+    var open=list.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  list.addEventListener('click',function(e){ if(e.target.tagName==='A'){list.classList.remove('open');btn.setAttribute('aria-expanded','false');} });
+
+  /* Packing list data (from the 2026 equipment list) */
+  var groups=[
+    {name:'Carry and sleep',items:[
+      ['Backpacking pack or soft duffle','Must carry your gear up to half a mile to camp'],
+      ['Sleeping bag rated 30°F or lower','With a stuff sack. Down or synthetic, not cotton'],
+      ['Sleeping pad','Any camping style'],
+      ['Small daypack','A school backpack works'],
+      ['Two large plastic garbage bags']
+    ]},
+    {name:'Wear',items:[
+      ['Waterproof jacket and waterproof pants'],
+      ['Warm jacket','One or two if you run cold'],
+      ['Fleece or wool pants','Warm and water-resistant'],
+      ['Long synthetic hiking pants','Non-cotton'],
+      ['Base layers: one top and one bottom','Midweight or heavyweight'],
+      ['Two pairs of wool or synthetic socks','Non-cotton'],
+      ['Warm hat and a sun hat'],
+      ['Fleece or wool gloves','One or two pairs'],
+      ['Shorts, a t-shirt, extra underwear, sunglasses']
+    ]},
+    {name:'Feet',items:[
+      ['Waterproof footwear','Hiking boots or rain boots'],
+      ['Camp shoes','Sneakers, Crocs, or trail runners']
+    ]},
+    {name:'Camp kit',items:[
+      ['Bowl, spoon, fork, and a cup or mug with a lid'],
+      ['One 1-liter water bottle'],
+      ['Headlamp or flashlight with extra batteries'],
+      ['Medications and personal first aid items','Leaders cannot hand out medicine'],
+      ['Sack lunch for the first day','All other meals are provided']
+    ]},
+    {name:'Personal care',items:[
+      ['Hand sanitizer and personal wipes'],
+      ['Biodegradable soap and a small quick-dry towel'],
+      ['Sunscreen and chapstick'],
+      ['Travel toothbrush and earplugs']
+    ]}
+  ];
+  var KEY='odyssey-pack-v1', saved={};
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ saved={}; }
+  var root=document.getElementById('packlist'), total=0, boxes=[];
+  groups.forEach(function(g,gi){
+    var box=document.createElement('div'); box.className='packgroup';
+    var h=document.createElement('h3'); h.textContent=g.name;
+    var cnt=document.createElement('span'); h.appendChild(cnt); box.appendChild(h);
+    var inputs=[];
+    g.items.forEach(function(it,ii){
+      var id='p'+gi+'_'+ii; total++;
+      var lab=document.createElement('label'); lab.className='check'; lab.setAttribute('for',id);
+      var inp=document.createElement('input'); inp.type='checkbox'; inp.id=id;
+      inp.checked=!!saved[id];
+      var sp=document.createElement('span'); sp.textContent=it[0];
+      if(it[1]){ var sm=document.createElement('small'); sm.textContent=it[1]; sp.appendChild(sm); }
+      lab.appendChild(inp); lab.appendChild(sp); box.appendChild(lab);
+      inputs.push(inp); boxes.push(inp);
+      inp.addEventListener('change',function(){
+        saved[id]=inp.checked;
+        try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+        update();
+      });
+    });
+    box._cnt=cnt; box._inputs=inputs; root.appendChild(box);
+  });
+  function update(){
+    var done=boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('packCount').textContent=done+' of '+total+' packed';
+    document.getElementById('packBar').style.width=(total?done/total*100:0)+'%';
+    [].slice.call(root.children).forEach(function(box){
+      var d=box._inputs.filter(function(b){return b.checked}).length;
+      box._cnt.textContent=d+'/'+box._inputs.length;
+    });
+  }
+  update();
+
+  /* Scroll reveal + active nav */
+  var revs=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    revs.forEach(function(r){io.observe(r)});
+  } else { revs.forEach(function(r){r.classList.add('in')}); }
+
+  var links=[].slice.call(document.querySelectorAll('.nav ul a[href^="#"]'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var y=window.scrollY+120, cur=-1;
+    secs.forEach(function(s,i){ if(s && s.offsetTop<=y) cur=i; });
+    links.forEach(function(a,i){ a.classList.toggle('on',i===cur); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+})();
+</script>
+</body>
+</html>
